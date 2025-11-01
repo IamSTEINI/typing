@@ -40,16 +40,6 @@ jobs:
           godot --headless --verbose --import
           godot --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
       
-      - name: Setup .gitattributes for LFS
-        run: |
-          cd build/web
-          if [ -f "index.pck" ]; then
-            echo "*.pck filter=lfs diff=lfs merge=lfs -text" > .gitattributes
-            echo "*.wasm filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
-            git lfs track "*.pck"
-            git lfs track "*.wasm"
-          fi
-      
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
