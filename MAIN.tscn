@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://clf55rbmtt3co"]
+
+[ext_resource type="PackedScene" uid="uid://nll2mcme07mg" path="res://ROOM.tscn" id="1_0llpg"]
+[ext_resource type="Script" uid="uid://bqew2d2ijq373" path="res://mouse_move.gd" id="2_a1u8q"]
+[ext_resource type="Shader" uid="uid://jc8troccmnq1" path="res://PIXEL.gdshader" id="3_78rud"]
+
+[sub_resource type="Environment" id="Environment_a1u8q"]
+background_mode = 1
+background_color = Color(0.21716759, 0.19437513, 0.2706562, 1)
+background_energy_multiplier = 1.75
+ambient_light_energy = 0.65
+reflected_light_source = 1
+tonemap_exposure = 0.19
+tonemap_white = 9.73
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_78rud"]
+shader = ExtResource("3_78rud")
+shader_parameter/pixel_size = 6
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a1u8q")
+
+[node name="room" parent="." instance=ExtResource("1_0llpg")]
+transform = Transform3D(0.9999952, 0, 0, 0, 0.9999952, 0, 0, 0, 0.9999952, -0.17737167, 0.0015915036, 0.4423192)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="room"]
+transform = Transform3D(1.0000049, 0, 0, 0, 1.0000049, 0, 0, 0, 1.0000049, 0, 1.8506829, 0)
+visible = false
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 3.77
+shadow_reverse_cull_face = true
+shadow_blur = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 676.04
+distance_fade_shadow = 44.35
+distance_fade_length = 0.0
+omni_range = 2.4232802
+
+[node name="PLAYER" type="Camera3D" parent="."]
+transform = Transform3D(-0.9688128, 0, 0.2477938, 0, 1, 0, -0.2477938, 0, -0.9688128, 0.6798455, 0.59526986, -1.0505453)
+fov = 70.1
+near = 0.001
+script = ExtResource("2_a1u8q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PLAYER"]
+
+[node name="ColorRect" type="ColorRect" parent="PLAYER/CanvasLayer"]
+material = SubResource("ShaderMaterial_78rud")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
