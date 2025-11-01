@@ -67,8 +67,8 @@ jobs:
           # Check if gh-pages branch exists and push accordingly
           if git ls-remote --exit-code --heads origin gh-pages; then
             echo "Remote branch exists, using --force-with-lease"
-            git fetch origin gh-pages
-            git push --force-with-lease=gh-pages:refs/remotes/origin/gh-pages origin HEAD:gh-pages
+            git fetch origin gh-pages:gh-pages
+            git push --force-with-lease=gh-pages origin HEAD:gh-pages
           else
             echo "No remote branch, using initial push"
             git push origin HEAD:gh-pages
