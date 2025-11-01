@@ -1,14 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://nll2mcme07mg"]
+[gd_scene load_steps=14 format=4 uid="uid://nll2mcme07mg"]
 
 [ext_resource type="PackedScene" uid="uid://dr0x3pohu8xbl" path="res://room.glb" id="1_c312q"]
 [ext_resource type="Texture2D" uid="uid://b4vfhh8uw73yl" path="res://room_12_1_16_d.jpg" id="2_arpwl"]
 [ext_resource type="Texture2D" uid="uid://btnoxwe8pbpbi" path="res://room_14_4_2_d.jpg" id="2_btjdq"]
 [ext_resource type="Texture2D" uid="uid://bpeeeol4rcymg" path="res://room_14_6_51_d.jpg" id="2_mxa6l"]
-[ext_resource type="Texture2D" uid="uid://bpkgklk0asm15" path="res://room_12_1_15_d.jpg" id="2_otwi6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a04dr"]
-albedo_color = Color(0.6585966, 0.54715616, 0.48524815, 1)
-albedo_texture = ExtResource("2_otwi6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jytr8"]
 albedo_color = Color(0.69135684, 0.6913568, 0.69135684, 1)
@@ -28,43 +23,43 @@ albedo_texture = ExtResource("2_arpwl")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btjdq"]
 albedo_color = Color(0.48845387, 0.26805022, 0.117218636, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csfqg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0tvu"]
 resource_name = "WALL::Elastomeric Swirl::Hanover"
 cull_mode = 2
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pws5g"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wg802"]
 _surfaces = [{
-"aabb": AABB(-102.69542, 0, -10.500001, 172.69542, 79.813255, 13.000006),
+"aabb": AABB(-70, 0, -2.5000036, 161.90126, 80.06239, 7.117817),
 "format": 34896613377,
-"index_count": 216,
-"index_data": PackedByteArray("AAABAAIAAQADAAIAAgAEAAAAAgADAAQABAADAAYAAQAGAAMAAAAEABQABAAGABQAAAAUABUAAAAVAAEAFAAGABYAFQAUABcAFAAWABcABgALABYAAQAIAAYABgAIAAsAAQAJAAgAFQAYAAEAGAAJAAEACgAIAAkAGAAKAAkACgALAAgAFQAZABgAFQAXABkAGQAaABgAGgAKABgAGQAXABsAGQAcABoAGQAbABwAFwAdABsAFwAWAB0AHAAbAAUAGwAeAAUAGwAdAB4AHAAFAAcABwAFAB4AHAAHAB8ABwAeAB8AHAAfABoAFgAgAB0AFgALACAAHQAhAB4AHQAgACEAHgAiAB8AHgAhACIAHwAjABoAHwAiACMAGgAjAAoAIwAPAAoACgAPAA4ACgAOAAsAIwAQAA8AIgAQACMAEAAOAA8ACwAOAA0AEAANAA4ACwANACAAIgAkABAAIQAkACIAIAAlACEAIQAlACQAIAANACUAJAATABAADQAMACUAJQARACQAJAARABMAJQAMABEAEAATABIAEAASAA0AEQASABMADQASAAwAEQAMABIA"),
-"lods": [0.054946028, PackedByteArray("AAABAAIAAQADAAIAAgAEAAAAAgADAAQAAAAEAAUABAADAAYAAQAGAAMABAAGAAUAAAAHAAEAAAAFAAcAAQAIAAYAAQAJAAgAAQAKAAkACgAIAAkABwAKAAEABgAIAAsABgALAAUACgALAAgABwAFAAwABQALAA0ABQANAAwACwAOAA0ACgAOAAsACgAPAA4AEAAOAA8ACgAQAA8ABwAQAAoAEAANAA4ADAARAAcABwARABAADQASAAwAEQAMABIAEAASAA0AEQASABMAEAATABIAEQATABAA")],
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAUAAwAFAAAAAQAQAAIAAgAQAAMAAQARABAAAQAFABIAEgARAAEAEgAFAAkAEQAEABAAEQAOAAQAEAAEABMAEAATAAMABAAOABQABAAUABMAFQAOABEAEgAVABEAFQAUAA4AFgAVABIAEgAJABYAFwAUABUAFgAXABUAEwAUABgAFwAYABQADwAXABYACQAPABYAGQAYABcADwAZABcAEwAYABoAAwATABoAGQANABgAGgAYAA0ADAAZAA8ACQAMAA8AGwANABkADAAbABkAGgANAAsAGwALAA0ABwAaAAsABwALABsAAwAaAAcACgAbAAwADAAJAAoACgAHABsABwAGAAMAAwAGAAUACgAIAAcACgAJAAgABwAIAAYABQAIAAkABQAGAAgA"),
+"lods": [0.037245743, PackedByteArray("AAABAAIAAgADAAAAAQAEAAIAAgAEAAMAAwAFAAAAAQAAAAUAAwAGAAUABwAGAAMAAwAEAAcABQAGAAgABwAIAAYAAQAFAAkABQAIAAkACgAIAAcACgAJAAgABwAEAAsACgAHAAwABwALAAwADAAJAAoABAANAAsADAALAA0AAQAOAAQABAAOAA0AAQAJAA8ACQAMAA8AAQAPAA4ADAANAA8ADQAOAA8A")],
 "name": "WALL::Elastomeric Swirl::Hanover",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 38,
-"vertex_data": PackedByteArray("AAAAAP//AAA7xgAAiZ0AAAAAAACJnQAAAAD//4mdAAAAAP////8AAP/////+/wAAO8b//4mdAAD//wAA/v8AADvG//8mdgAAO8YAACZ2AAB62AAAJnYAAHrY//8mdgAA/////wAAAADB9P//EzsAAHrY//8TOwAAetgAABM7AADB9AAAEzsAAP//AAAAAAAAwfT//wAAAADB9AAAAAAAAFix///+/wAAWLEAAP7/AAAYzf//iZ0AABjN///+/wAAGM0AAImdAAAYzQAA/v8AAMH0AACJnQAAwfT///7/AADB9AAA/v8AAMH0//+JnQAA/////4mdAAD//wAAiZ0AAMH0//8mdgAA/////yZ2AAD//wAAJnYAAMH0AAAmdgAA//8AABM7AAD/////EzsAAA==")
+"vertex_count": 28,
+"vertex_data": PackedByteArray("lA4AAP//AAAAAAAAAAAAAAAAAAD//wAAlA45zv//AAAAAP////8AAJQOAABRjwAAlA45ztyPAADKzDnO//8AAMrMOc7cjwAAyswAAJ2QAADKzAAA//8AAP/////+/wAA//8AAP7/AAD/////AAAAAAAA//8AAAAA//8AAAAAAAAAADnO//8AAAAAOc4AAAAAlA4AAAAAAACUDv////8AAJQO//8AAAAAlA45zgAAAADKzAAAAAAAAMrMOc4AAAAAysz//wAAAAD//znOAAAAAMrM/////wAA//85zv7/AAA=")
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xbg8h"]
-resource_name = "room_Mesh_413"
+[sub_resource type="ArrayMesh" id="ArrayMesh_mjwij"]
+resource_name = "room_Mesh_415"
 _surfaces = [{
-"aabb": AABB(-102.69542, 0, -10.500001, 172.69542, 79.813255, 13.000006),
-"attribute_data": PackedByteArray("GODsZdzbO93c2+xlGOD//yraNugq2jvdn9c7+Z/XNugV1f//FdU7+SKH7GVfi+xlX4s73SKH//8RjTboEY073ZuPO/mbjzboJpL//yaSO/k8ZybajPnxkoz5Jto8Z/GSIocm2iKH8ZImkvGSJpIm2q5tJtobdPGSG3Qm2q5t8ZIbdCbaRITxkkSEJtobdPGSRIQm2rKO8ZKyjibaRITxkrKOJtr///GS//8m2rKO8ZLc2ybaGODxkhjgJtrc2/GS3Nsm2ira8ZLc2/GSKtom2iraJtqf1/GSKtrxkp/XJtqf1ybaFdXxkp/X8ZIV1SbaGOCo0NzbXOEY4Fzh3Ns7+RjgO/nc2///Kto7+Sra//+f1///Ioeo0F+LXOEih1zhX4s7+SKHO/lfi///EY3//xGNO/mbj///mczxkpnMJtp13PGSddwm2iDz8ZIg8ybaX4vxkl+LJtoRjSbaEY3xkpuPJtqbj/GS"),
+"aabb": AABB(-70, 0, -2.5000036, 161.90126, 80.06239, 7.117817),
+"attribute_data": PackedByteArray("Ko2jfiKH03YqjdN2g4qjfouKj+Qih///Ko3//yqNj+QQ2tN2GODTdhjg//8Q2v//03ac1aN+956jfpzV03bHkY/k957//8eR//+c1Y/knNWjfpzVj+T3no/knNWjfveeENqc1Rjgx5EY4JzVENrHkWfwnNU8Z5zVZ/DHkTxnx5Eih5zVKo3HkSqNnNUih8eRKo2c1YaK954qjfeei4qc1SqNj+SGiqN+Ko2jfoaKj+QQ2veeuNyc1RDanNW13PeeIoejfiKHj+QY4KN+ENqjfhjgj+QQ2o/k03b3nqN+x5GP5MeR///3nhjg954Q2veerIL3nqyCnNU8Z/eerILHkZfox5GX6Peel+ic1Wfw954qjfeeIof3ng=="),
 "format": 34896613399,
-"index_count": 216,
-"index_data": PackedByteArray("AAABAAIAAAA8AAEAPAA9AAEAPQAFAAEAPAA+AD0APQAEAAUAPgA/AD0APwAEAD0APgBAAD8AQABBAD8AQAADAEEAPwBCAAQAQQBCAD8AQgAHAAQAQQBDAEIAQgAGAAcAQwAGAEIAQwBEAAYARAAJAAYARAAIAAkACgAMAEUACgALAAwARQAMAEYARQBGAEcADAAOAEYADAAPAA4ARwBGAEgARwBIAEkASQBIAEoASQBKAA0ASABLAEoARgBMAEgASABMAEsARgAOAEwATABNAEsADgAQAEwATAAQAE0ADgARABAAEAASAE0AEAATABIAFABOAE8AFAAXAE4ATwBOAFAATwBQAFEAUQBQAFIAUQBSAFMAUwBSABUAUwAVABYAGABUAFUAGAAZAFQAVABWAFUAVABXAFYAVwBYAFYAVwBZAFgAWQAbAFgAWQAaABsAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkA"),
-"lods": [0.054946028, PackedByteArray("AAABAAIAAAADAAEAAwAEAAEAAQAEAAUAAwAGAAQABAAGAAcAAwAIAAYACAAJAAYACgALAAwACgAMAA0ADAAOAA0ADAAPAA4ADQAOABAADgARABAADQAQABIAEAATABIAFAAVABYAFAAXABUAGAAZABoAGgAbABgAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkA")],
-"material": SubResource("StandardMaterial3D_csfqg"),
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAQADADAAMAADAAQAMAAEADEABAAFADEABAAGAAUABgAEAAcACAAyADMACAAJADIAMwAyADQAMwA0ADUANQA0AAoANQAKAAsADAANAA4ADAA2AA0ANgA3AA0ANgAPADcADQA3ADgADQA4ABAAEAA4ABEAEAARADkAEwAQADkAEwA5ABIAFAAVABYAFAAXABUAGAA6ABoAGAA7ADoAOwAZADoAOwAbABkAHQA8AD0AHQA+ADwAPgA/ADwAPgAfAD8APAA/AEAAPQA8AEEAPABAAEEAQQBAAB4APQBBAEIAQQAeAEMAQgBBAEMAQgBDABwAIABEACIAIABFAEQARQAhAEQARQAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"lods": [0.037245743, PackedByteArray("AAABAAIAAQAAAAMAAQADAAQAAQAEAAUABAAGAAUABgAEAAcACAAJAAoACAAKAAsADAANAA4ADAAPAA0ADQAPABAAEAAPABEAEAARABIAEwAQABIAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHwAeAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A")],
+"material": SubResource("StandardMaterial3D_u0tvu"),
 "name": "WALL::Elastomeric Swirl::Hanover",
 "primitive": 3,
-"uv_scale": Vector4(2.4797, 2.354834, 0, 0),
-"vertex_count": 90,
-"vertex_data": PackedByteArray("AAAAAP//VNU7xgAAiZ1U1QAAAACJnVTV//8AAP7/VNV62AAAJnZU1TvGAAAmdlTVwfQAABM7VNV62AAAEztU1f//AAAAAFTVwfQAAAAAVNUAAP////9U1QAA//+JnVTVO8b//4mdVNX//////v9U1XrY//8mdlTVO8b//yZ2VNXB9P//EztU1XrY//8TO1TV/////wAAVNXB9P//AABU1QAAAAD//wCA//////7/AID//wAA/v8AgAAA/////wCA//8AAP7//7///////v//v/////8AAP+///8AAAAA/7///wAAAAD//8H0//8AAP//wfQAAAAA////////AAD//8H0AAATO///etj//xM7//962AAAEzv//8H0//8TO///etgAACZ2//87xv//Jnb//zvGAAAmdv//etj//yZ2//87xgAAiZ3//wAA//+Jnf//AAAAAImd//87xv//iZ3//wAAAACJnf+/AAD//////78AAAAA////vwAA//+Jnf+/O8YAAImd/787xv//Jnb/vzvG//+Jnf+/O8YAACZ2/7962AAAJnb/v3rY//8TO/+/etj//yZ2/7962AAAEzv/v8H0AAATO/+/wfT//wAA/7/B9P//Ezv/v8H0AAAAAP+/WLEAAP7/VNUYzQAAiZ1U1RjNAAD+/1TVwfQAAImdVNXB9AAA/v9U1f//AACJnVTVwfQAACZ2VNX//wAAJnZU1f//AAATO1TVWLH///7/VNUYzf//iZ1U1RjN///+/1TVwfT//4mdVNXB9P///v9U1f////+JnVTV/////yZ2VNXB9P//JnZU1f////8TO1TVWLH///7/AIBYsQAA/v8AgBjN///+/wCAGM0AAP7/AIDB9P///v8AgMH0AAD+/wCA/////4md/7///wAAiZ3/v///AAAmdv+//////yZ2/7///wAAEzv/v/////8TO/+/qipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1VTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqir/f////3////9/////f////38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f///qipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoq/3////9/////f////3////9/////f////38AAP9/AAD/fwAA/38AAP9/AAD/fwAA")
+"uv_scale": Vector4(2.4797, 2.4797, 0, 0),
+"vertex_count": 70,
+"vertex_data": PackedByteArray("lA4AAP//VNUAAAAAAABU1QAAAAD//1TVlA4AAFGPVNXKzAAAnZBU1f//AAAAAFTV//8AAP7/VNXKzAAA//9U1QAA/////1TVAAD//wAAVNX/////AABU1f/////+/1TVAAAAAP//AICUDjnO//8AgJQOAAD//wCAAAD/////AIDKzDnO//8AgP/////+/wCA//8AAP7/AIDKzAAA//8AgJQOAABRjwCAysw5ztyPAIDKzAAAnZAAgJQOOc7cjwCA//8AAP7//7//////AAD/v///AAAAAP+///////7//78AAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAP+/AAD//////78AAAAA////vwAA//8AAP+/yswAAP///7/KzDnO3I//v8rMOc7///+/yswAAJ2Q/7/KzDnO//9U1ZQOOc7cj1TVlA45zv//VNXKzDnO3I9U1ZQOOc7///+/lA4AAFGP/7+UDgAA////v5QOOc7cj/+/lA4AAAAAVNXKzAAAAABU1ZQO//8AAFTVlA7/////VNXKzP//AABU1crM/////1TVAAA5zv//AICUDv////8AgMrM/////wCA//85zv7/AID//znOAAD/v///Oc7+//+/ysw5zgAA///KzAAAAAD/////Oc4AAP//ysz//wAA//+UDv//AAD//5QOOc4AAP//lA4AAAAA//8AADnOAAD//wAAOc7///+/AAA5zgAA/7+qKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1VTVqipU1aoqVNWqKlTVqir/f////3////9/////f////3////9/////f////3////9/////f////3////9/////fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f////3////9/////f////3////9/////f///qipU1aoqVNWqKlTVqipU1f9/AAD/fwAA/38AAP9/AACqKlTVqipU1VTVqipU1aoqVNWqKlTVqir/f////3////9/////f////38AAP9/AAD/f////3////9/////f////3////9/////f////3////9/////f///")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_pws5g")
+shadow_mesh = SubResource("ArrayMesh_wg802")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2hkg"]
 albedo_color = Color(0.9020959, 0.8307298, 0.63940406, 1)
@@ -74,191 +69,67 @@ emission_energy_multiplier = 0.0
 
 [node name="room" instance=ExtResource("1_c312q")]
 
-[node name="Cylinder010" parent="Kazan-Boruları" index="3"]
-transform = Transform3D(-0.25881937, -4.768372e-07, 0.96592575, -0.9659259, -2.384186e-07, -0.25881937, 3.8743022e-07, -1.0000001, -3.576279e-07, 47.873386, -46.13309, 46.638557)
-
-[node name="Cylinder025" parent="Kazan-Boruları" index="17"]
-transform = Transform3D(-0.25881937, -4.768372e-07, 0.96592575, -0.9659259, -2.384186e-07, -0.25881937, 3.8743022e-07, -1.0000001, -3.576279e-07, 47.873386, -47.062378, 46.638557)
-
-[node name="Box123" parent="Yataklar/Ranza/Ranza-Alt" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box124" parent="Yataklar/Ranza/Ranza-Alt" index="3"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box125" parent="Yataklar/Ranza/Ranza-Alt" index="4"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box126" parent="Yataklar/Ranza/Ranza-Alt" index="5"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box128" parent="Yataklar/Ranza/Ranza-Alt" index="7"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box133" parent="Yataklar/Ranza/Ranza-Alt" index="12"]
-transform = Transform3D(-5.1482427e-08, -6.1718445e-08, 0.5941787, -0.4318659, 7.357412e-15, -7.083162e-08, 0, 0.51773185, 7.083162e-08, 14.693321, -23.822441, -25.86317)
-
-[node name="Box087" parent="Yataklar/Ranza/Ranza-Üst" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box088" parent="Yataklar/Ranza/Ranza-Üst" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box089" parent="Yataklar/Ranza/Ranza-Üst" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box090" parent="Yataklar/Ranza/Ranza-Üst" index="3"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box091" parent="Yataklar/Ranza/Ranza-Üst" index="4"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box092" parent="Yataklar/Ranza/Ranza-Üst" index="5"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box093" parent="Yataklar/Ranza/Ranza-Üst" index="6"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box094" parent="Yataklar/Ranza/Ranza-Üst" index="7"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box095" parent="Yataklar/Ranza/Ranza-Üst" index="8"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box096" parent="Yataklar/Ranza/Ranza-Üst" index="9"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box097" parent="Yataklar/Ranza/Ranza-Üst" index="10"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box098" parent="Yataklar/Ranza/Ranza-Üst" index="11"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box099" parent="Yataklar/Ranza/Ranza-Üst" index="12"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box100" parent="Yataklar/Ranza/Ranza-Üst" index="13"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box101" parent="Yataklar/Ranza/Ranza-Üst" index="14"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a04dr")
-
-[node name="Box140" parent="Yataklar/Yatak" index="0"]
-transform = Transform3D(-0.42690074, 0, 0, 0, 1.0000002, 4.7989295e-07, 0, -6.278331e-07, 0.764364, 15.358414, -10.314896, 0.42946625)
-
-[node name="Cylinder050" parent="Yataklar/Yatak-2" index="13"]
+[node name="Cylinder050" parent="Yataklar/Yatak-2" index="2"]
 transform = Transform3D(0.8275029, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -11.852114, -11.945101, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Cylinder051" parent="Yataklar/Yatak-2" index="14"]
-transform = Transform3D(3.5762795e-07, 0.8275029, 0, -1.0000001, 2.9593812e-07, 0, 0, 0, 1.0000001, -11.363598, -4.058348, 23.299915)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Cylinder052" parent="Yataklar/Yatak-2" index="15"]
+[node name="Cylinder052" parent="Yataklar/Yatak-2" index="3"]
 transform = Transform3D(0.4948841, 0, 0, 0, -3.5762795e-07, -0.57709485, 0, 1.0000001, -2.0638522e-07, -0.16595459, -3.7177496, 23.087004)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Cylinder053" parent="Yataklar/Yatak-2" index="16"]
+[node name="Cylinder053" parent="Yataklar/Yatak-2" index="4"]
 transform = Transform3D(3.5762795e-07, 0.8275029, 0, -1.0000001, 2.9593812e-07, 0, 0, 0, 1.0000001, -11.363598, 5.024146, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Cylinder054" parent="Yataklar/Yatak-2" index="17"]
-transform = Transform3D(3.5762795e-07, 0.8275029, 0, -1.0000001, 2.9593812e-07, 0, 0, 0, 1.0000001, -11.363598, -4.058349, -23.299911)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Cylinder055" parent="Yataklar/Yatak-2" index="18"]
-transform = Transform3D(0.4948841, 0, 0, 0, -3.5762795e-07, -0.57709485, 0, 1.0000001, -2.0638522e-07, -0.16595459, -3.71775, -23.512817)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Cylinder056" parent="Yataklar/Yatak-2" index="19"]
+[node name="Cylinder056" parent="Yataklar/Yatak-2" index="5"]
 transform = Transform3D(0.8275029, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 11.217815, -11.945101, -23.299911)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Cylinder057" parent="Yataklar/Yatak-2" index="20"]
-transform = Transform3D(3.5762795e-07, 0.8275029, 0, -1.0000001, 2.9593812e-07, 0, 0, 0, 1.0000001, -11.363598, 5.024146, -23.299911)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Cylinder058" parent="Yataklar/Yatak-2" index="21"]
+[node name="Cylinder058" parent="Yataklar/Yatak-2" index="6"]
 transform = Transform3D(0.8275029, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 11.217815, -11.945101, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Cylinder059" parent="Yataklar/Yatak-2" index="22"]
+[node name="Cylinder059" parent="Yataklar/Yatak-2" index="7"]
 transform = Transform3D(0.8275029, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -11.852114, -11.945101, -23.299911)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Helix011" parent="Yataklar/Yatak-2" index="23"]
-transform = Transform3D(-0.45012996, 3.7565243e-07, 0.96530783, -1.1665316, 4.6711385e-08, -0.37248367, 2.2358272e-07, 1.0000001, -3.4522094e-07, 8.892704, 0.18829155, -23.299911)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Helix012" parent="Yataklar/Yatak-2" index="24"]
+[node name="Helix012" parent="Yataklar/Yatak-2" index="8"]
 transform = Transform3D(1.0346804, -1.1920932e-07, -1.490551e-07, 1.2334353e-07, 0, 1.2503647, 1.2334353e-07, 1.0000001, -1.7768756e-14, 1.0598602, 4.782137, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Helix013" parent="Yataklar/Yatak-2" index="25"]
+[node name="Helix013" parent="Yataklar/Yatak-2" index="9"]
 transform = Transform3D(-1.0346804, 8.7422706e-08, -1.09310335e-07, -9.0454556e-08, 5.364419e-07, 1.2503648, 9.04546e-08, 1.0000001, -6.70748e-07, -1.5481186, 4.782137, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Helix014" parent="Yataklar/Yatak-2" index="26"]
+[node name="Helix014" parent="Yataklar/Yatak-2" index="10"]
 transform = Transform3D(0.45013028, 1.8088505e-08, -0.9653076, -1.1665312, -8.885245e-08, -0.3724839, -1.1179133e-07, 1.0000001, -1.5635141e-08, -9.532639, 0.18829155, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Helix015" parent="Yataklar/Yatak-2" index="27"]
+[node name="Helix015" parent="Yataklar/Yatak-2" index="11"]
 transform = Transform3D(-0.45012996, 3.7565243e-07, 0.96530783, -1.1665316, 4.6711385e-08, -0.37248367, 2.2358272e-07, 1.0000001, -3.4522094e-07, 8.892704, 0.18829155, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Helix016" parent="Yataklar/Yatak-2" index="28"]
-transform = Transform3D(0.45013028, 1.8088505e-08, -0.9653076, -1.1665312, -8.885245e-08, -0.3724839, -1.1179133e-07, 1.0000001, -1.5635141e-08, -9.532639, 0.18829155, -23.299911)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Helix017" parent="Yataklar/Yatak-2" index="29"]
-transform = Transform3D(1.0346804, -1.1920932e-07, -1.490551e-07, 1.2334353e-07, 0, 1.2503647, 1.2334353e-07, 1.0000001, -1.7768756e-14, 1.0598602, 4.782137, -23.299911)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Helix018" parent="Yataklar/Yatak-2" index="30"]
-transform = Transform3D(-1.0346804, 8.7422706e-08, -1.09310335e-07, -9.0454556e-08, 5.364419e-07, 1.2503648, 9.04546e-08, 1.0000001, -6.70748e-07, -1.5481186, 4.782137, -23.299911)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Line010" parent="Yataklar/Yatak-2" index="31"]
+[node name="Line010" parent="Yataklar/Yatak-2" index="12"]
 transform = Transform3D(-0.8275029, 0, 0, 0, -3.5762795e-07, -1.0000001, 0, 1.0000001, -3.5762795e-07, 1.9302406, 0.7616501, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Line011" parent="Yataklar/Yatak-2" index="32"]
+[node name="Line011" parent="Yataklar/Yatak-2" index="13"]
 transform = Transform3D(0.8275029, 0, 0, 0, -3.5762795e-07, -1.0000001, 0, 1.0000001, -3.5762795e-07, -2.4185047, 0.7616501, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Line012" parent="Yataklar/Yatak-2" index="33"]
+[node name="Line012" parent="Yataklar/Yatak-2" index="14"]
 transform = Transform3D(0.43108675, 3.0968374e-07, 0.7466646, 0.90231055, -2.1401193e-07, -0.35672548, 5.960465e-08, 1.0000001, -3.0757334e-07, -6.9045696, -3.0784516, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Line013" parent="Yataklar/Yatak-2" index="34"]
+[node name="Line013" parent="Yataklar/Yatak-2" index="15"]
 transform = Transform3D(-0.4310866, 1.484455e-07, -0.7466646, 0.90231067, -6.11945e-08, -0.35672536, 1.1920929e-07, 1.0000001, 8.9009355e-08, 6.2646217, -3.0784516, 23.299915)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Line014" parent="Yataklar/Yatak-2" index="35"]
-transform = Transform3D(-0.8275029, 0, 0, 0, -3.5762795e-07, -1.0000001, 0, 1.0000001, -3.5762795e-07, 1.9302406, 0.7616482, -23.299911)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Line015" parent="Yataklar/Yatak-2" index="36"]
-transform = Transform3D(-0.4310866, 1.484455e-07, -0.7466646, 0.90231067, -6.11945e-08, -0.35672536, 1.1920929e-07, 1.0000001, 8.9009355e-08, 6.2646217, -3.0784516, -23.299911)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Line016" parent="Yataklar/Yatak-2" index="37"]
-transform = Transform3D(0.8275029, 0, 0, 0, -3.5762795e-07, -1.0000001, 0, 1.0000001, -3.5762795e-07, -2.4185047, 0.7616482, -23.299911)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Line017" parent="Yataklar/Yatak-2" index="38"]
-transform = Transform3D(0.43108675, 3.0968374e-07, 0.7466646, 0.90231055, -2.1401193e-07, -0.35672548, 5.960465e-08, 1.0000001, -3.0757334e-07, -6.9045696, -3.0784516, -23.299911)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Plane005" parent="Yataklar/Yatak-2" index="39"]
-transform = Transform3D(0.8275029, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.26898193, -1.5759039, 0.5672188)
-surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
-
-[node name="Shape003" parent="Yataklar/Yatak-2" index="40"]
+[node name="Shape003" parent="Yataklar/Yatak-2" index="16"]
 transform = Transform3D(0.77653384, 0, 0, 0, -3.5762795e-07, -1.016433, 0, 1.0000001, -3.635048e-07, -0.16595459, -3.8407083, 23.087004)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
-[node name="Shape004" parent="Yataklar/Yatak-2" index="41"]
+[node name="Shape004" parent="Yataklar/Yatak-2" index="17"]
 transform = Transform3D(0.77653384, 0, 0, 0, -3.5762795e-07, -1.016433, 0, 1.0000001, -3.635048e-07, -0.16595459, -3.8407083, -23.512817)
 surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 
@@ -266,10 +137,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_jytr8")
 transform = Transform3D(1.3419694, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000004, 1.0452919, -9.932835, -0.1363678)
 surface_material_override/0 = SubResource("StandardMaterial3D_d13mt")
 
-[node name="Box226" parent="Halılar" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_otwi6")
-
-[node name="Box227" parent="Halılar" index="1"]
+[node name="Box227" parent="Halılar" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_otwi6")
 
 [node name="Kapı-Cam-1" parent="Kapı" index="0"]
@@ -279,25 +147,22 @@ material_override = SubResource("StandardMaterial3D_mxa6l")
 [node name="Box001" parent="Duvarlar" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_btjdq")
 
-[node name="Box002" parent="Duvarlar" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_btjdq")
-
-[node name="Box005" type="MeshInstance3D" parent="Duvarlar" index="2"]
-transform = Transform3D(0.99999875, 0, 0.0016578869, 0, 1.0000005, 0, -0.0016578869, 0, 0.99999875, 14.277604, -39.802998, 90.06166)
-mesh = SubResource("ArrayMesh_xbg8h")
+[node name="Box001" type="MeshInstance3D" parent="Duvarlar/Box001" index="0"]
+transform = Transform3D(-1.1920917e-07, 0, -0.9999993, 0, 1, 0, 0.9999993, 0, -1.1920917e-07, 89.18017, -1.3483768, 61.254173)
+mesh = SubResource("ArrayMesh_mjwij")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_btjdq")
 
-[node name="Box003" parent="Duvarlar" index="3"]
+[node name="Box002" parent="Duvarlar" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_btjdq")
 
-[node name="Box004" parent="Duvarlar" index="4"]
+[node name="Box004" parent="Duvarlar" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_btjdq")
 
-[node name="Box067" parent="Duvarlar" index="5"]
+[node name="Box067" parent="Duvarlar" index="3"]
 surface_material_override/0 = SubResource("StandardMaterial3D_btjdq")
 
-[node name="Box086" parent="Duvarlar" index="6"]
+[node name="Box086" parent="Duvarlar" index="4"]
 surface_material_override/0 = SubResource("StandardMaterial3D_btjdq")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Lamba" index="2"]
