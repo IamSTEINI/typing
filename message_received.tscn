@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnnnjuok7qohh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ao1bj"]
+bg_color = Color(0.48578525, 0.77035224, 1.92523e-06, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_78rud"]
+
+[node name="MessageReceived" type="GridContainer"]
+columns = 2
+
+[node name="Message" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ao1bj")
+
+[node name="Message" type="Label" parent="Message"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 11.0
+offset_top = 22.0
+offset_right = 387.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 26
+text = "TEST MESSAGE"
+vertical_alignment = 1
+
+[node name="Sender" type="Label" parent="Message"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 386.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5882353)
+theme_override_font_sizes/font_size = 14
+text = "Sender"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_78rud")

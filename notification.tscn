@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmsoy4ymkly2o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgeht"]
+bg_color = Color(0.06053035, 0.06053035, 0.060530342, 0.6509804)
+border_width_top = 2
+border_color = Color(0.5294118, 0.5294118, 0.5294118, 0.2627451)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Notification" type="Panel"]
+custom_minimum_size = Vector2(650, 90)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -325.0
+offset_top = 26.0
+offset_right = 325.0
+offset_bottom = 116.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kgeht")
+
+[node name="sender" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 239.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.3254902)
+theme_override_font_sizes/font_size = 13
+text = "SENDER"
+vertical_alignment = 1
+
+[node name="text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 30.0
+offset_right = 643.0
+offset_bottom = 93.0
+text = "TEXT TEXT"
+autowrap_mode = 2

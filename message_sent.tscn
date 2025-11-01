@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8kiyi5airywn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rf5wo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm5h3"]
+bg_color = Color(0.4837454, 0.41475472, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MessageSent" type="GridContainer"]
+columns = 2
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rf5wo")
+
+[node name="OwnMessage" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tm5h3")
+
+[node name="Message" type="Label" parent="OwnMessage"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 11.0
+offset_top = 22.0
+offset_right = 387.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 26
+text = "TEST MESSAGE"
+vertical_alignment = 1
+
+[node name="Sender" type="Label" parent="OwnMessage"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 386.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5882353)
+theme_override_font_sizes/font_size = 14
+text = "You"
+vertical_alignment = 1
