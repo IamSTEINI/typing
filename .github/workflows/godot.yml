@@ -62,9 +62,14 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # Configure remote with token
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git add .gitattributes
           git add .
           git commit -m "Deploy to GitHub Pages"
-          # Fetch existing gh-pages branch if it exists, then push with force-with-lease for safety
-          git fetch origin gh-pages:refs/remotes/origin/gh-pages || echo "No existing gh-pages branch"
-          git push --force-with-lease origin HEAD:gh-pages || git push -f origin HEAD:gh-pages
+          # Check if gh-pages branch exists and push accordingly
+          if git ls-remote --exit-code --heads origin gh-pages; then
+            echo "Remote branch exists, using --force-with-lease"
+            git fetch origin gh-pages
+            git push --force-with-lease=gh-pages:refs/remotes/origin/gh-pages origin HEAD:gh-pages
+          else
+            echo "No remote branch, using initial push"
+            git push origin HEAD:gh-pages
+          fi
