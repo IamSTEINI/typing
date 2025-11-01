@@ -40,24 +40,17 @@ jobs:
           godot --headless --verbose --import
           godot --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
       
-      - name: Create .gitattributes for LFS in build directory
-        run: |
-          echo "*.pck filter=lfs diff=lfs merge=lfs -text" > build/web/.gitattributes
-          echo "*.wasm filter=lfs diff=lfs merge=lfs -text" >> build/web/.gitattributes
-          cat build/web/.gitattributes
-      
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: web
           path: build/web
       
-      - name: Deploy to GitHub Pages with LFS
+      - name: Deploy to GitHub Pages
         run: |
           set -e
           cd build/web
           git init
-          git lfs install
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # Configure remote with token
