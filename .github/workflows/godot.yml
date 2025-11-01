@@ -60,9 +60,11 @@ jobs:
           git lfs install
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Configure remote with token
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git add .gitattributes
           git add .
           git commit -m "Deploy to GitHub Pages"
-          # Try safer force-with-lease first, fall back to force if this is initial push
-          git fetch https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages:refs/remotes/origin/gh-pages || true
-          git push --force-with-lease https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:gh-pages
+          # Fetch existing gh-pages branch if it exists, then push with force-with-lease for safety
+          git fetch origin gh-pages:refs/remotes/origin/gh-pages || echo "No existing gh-pages branch"
+          git push --force-with-lease origin HEAD:gh-pages || git push -f origin HEAD:gh-pages
