@@ -52,10 +52,16 @@ jobs:
           name: web
           path: build/web
       
-      - name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: build/web
-          clean: true
-          lfs: true
+      - name: Deploy to GitHub Pages with LFS
+        run: |
+          cd build/web
+          git init
+          git lfs install
+          git lfs track "*.pck"
+          git lfs track "*.wasm"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .gitattributes
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:gh-pages
