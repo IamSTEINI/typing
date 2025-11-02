@@ -19,7 +19,7 @@ var startrotation := Vector3.ZERO
 var nqueue: Array = []
 var notifications: Array = []
 var showing_notification := false
-var state = 8
+var state = 0
 var can_reply = true
 
 func fade_light(duration: float = 2.0, max_energy: float = 1.0) -> void:
@@ -96,6 +96,7 @@ func fire_reply():
 		state += 1
 		can_reply = true
 	elif state == 3:
+		await get_tree().create_timer(1.35).timeout
 		add_notification("Mike", "Anyway... How are you?")
 		await type_write("We chatted a bit [PRESS SPACE]")
 		state += 1
@@ -125,7 +126,28 @@ func fire_reply():
 		add_notification("Mike", "Propably it's just the wind...")
 		await type_write("Maybe it was really just the wind. At least, that's what I thought.")
 		await get_tree().create_timer(0.8).timeout
-		add_notification("Mike", "Or the guest you invited, who stayed. Watching.")
+		add_notification("Mike", "Or the guest you invited, who stayed. Just kidding.")
+		state += 1
+		can_reply = true
+	elif state == 13:
+		await get_tree().create_timer(1.35).timeout
+		add_notification("Mike", "Yeah the storms are crazy...")
+		state += 1
+		can_reply = true
+	elif state == 15:
+		await get_tree().create_timer(1.35).timeout
+		add_notification("Mike", "What do you mean?")
+		state += 1
+		can_reply = true
+	elif state == 16:
+		await get_tree().create_timer(1.35).timeout
+		add_notification("Mike", "Weird...")
+		$Phone.visible = false
+		$UI/GridContainer/Send.visible = false
+		knock.play()
+		await type_write("And it knocked again... It was 3:01 AM.")
+		$UI/Ending.show()
+		await type_write("Now I'm dead. Funny how everything becomes a memory.")
 		state += 1
 		can_reply = true
 	
@@ -191,9 +213,22 @@ func _input(event: InputEvent) -> void:
 			door_squeak.play()
 			type_write("I've heard some door squaking...")
 			await get_tree().create_timer(2.9).timeout
-			for i in range(80):
-				shelf_door.rotation_degrees += Vector3(0,1,0)
+			for i in range(80*2):
+				shelf_door.rotation_degrees += Vector3(0,0.5,0)
 				await get_tree().create_timer(0.02).timeout
+			await type_write("Fortunately, the emergency power kicked in, but something was different.")
+			await flicker(3, 0, 1)
+			light.light_energy = 1
+			add_notification("You", "My power went off")
+			$Phone.visible = true
+			$UI/GridContainer/Send.visible = true
+			state+=1
+		elif state == 14:
+			add_notification("You", "My shelf door somehow moved")
+			await type_write("I thought I was crazy")
+			state+=1
+		elif state == 15:
+			add_notification("You", "The door opened!")
 			state+=1
 		fire_reply()
 		render_messages()
