@@ -9,6 +9,7 @@ extends Camera3D
 @export var knock: AudioStreamPlayer3D
 
 @onready var notif_container := $UI/Notifications
+@onready var type_field := $UI/TypeWriter
 
 var goal_rotation := Vector2.ZERO
 var current_rot := Vector2.ZERO
@@ -32,13 +33,18 @@ func _ready() -> void:
 	can_reply = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	startrotation = rotation_degrees
+	type_field.hide()
 	$UI/GridContainer/Send.visible = false
 	$Phone.visible = false
 	await fade_light(2, 1)
-	await get_tree().create_timer(2).timeout
+	await type_write("It was Sunday. My parents left this evening for a business trip.")
+	await get_tree().create_timer(0.5).timeout
+	await type_write("I woke up due to storms outside. I felt my phone buzzing. It's 2:49 AM")
 	flicker(1,0.4, 1)
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.5).timeout
 	add_notification("Mike", "Hey...")
+	await type_write("Someone texted me, I openend my phone [PRESS M] and replied [PRESS SPACE]")
 	can_reply = true
 
 func flicker(duration: float = 2.0, min_energy: float = 0.5, max_energy: float = 2.0) -> void:
@@ -83,18 +89,21 @@ func fire_reply():
 	if state == 1:
 		await get_tree().create_timer(1.35).timeout
 		add_notification("Mike", "What do you mean? I was your classmate!")
+		await type_write("I had met many people that evening; it was Halloween.")
+		await type_write("Perhaps he was one of them. I replied [PRESS SPACE]")
 		state += 1
 	elif state == 3:
-		await get_tree().create_timer(1.35).timeout
 		add_notification("Mike", "Anyway... How are you?")
+		await type_write("We chatted a bit [PRESS SPACE]")
 		state += 1
 	elif state == 5:
 		await get_tree().create_timer(1.35).timeout
 		add_notification("Mike", "Good to hear.")
 		await get_tree().create_timer(1).timeout
 		add_notification("Mike", "Do you still live with your parents?")
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(2).timeout
 		add_notification("Mike", "Okay, just don't answer.")
+		await type_write("He seemed strange, but I was still too tired to respond. I told him that I want to sleep")
 		state += 1
 	elif state == 7:
 		await get_tree().create_timer(1.35).timeout
@@ -104,7 +113,26 @@ func fire_reply():
 		await get_tree().create_timer(1.35).timeout
 		add_notification("Mike", "Your parents?")
 		state += 1
+	elif state == 11:
+		await get_tree().create_timer(1.35).timeout
+		add_notification("Mike", "Propably it's just the wind...")
+		await type_write("Maybe it was really just the wind. At least, that's what I thought.")
+		await get_tree().create_timer(0.8).timeout
+		add_notification("Mike", "Calm down")
+		state += 1
 	can_reply = true
+	
+func type_write(text: String) -> void:
+	$typewriter.play()
+	type_field.text = ""
+	type_field.show()
+	var total = text.length()
+	for i in range(total):
+		type_field.text += text[i]
+		await get_tree().create_timer(0.05).timeout
+	$typewriter.stop()
+	await get_tree().create_timer(1).timeout
+	type_field.hide()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_M:
@@ -126,6 +154,7 @@ func _input(event: InputEvent) -> void:
 			add_notification("You", "Look, I want to sleep.")
 			await get_tree().create_timer(1).timeout
 			add_notification("You", "We can talk tomorrow")
+			flicker(1,0.4, 1)
 			await get_tree().create_timer(2).timeout
 			$Phone.visible = false
 			$UI/GridContainer/Send.visible = false
@@ -140,6 +169,8 @@ func _input(event: InputEvent) -> void:
 			state+=1
 		elif state == 10:
 			add_notification("You", "Impossible, they're outside the city")
+			await get_tree().create_timer(1).timeout
+			add_notification("You", "God, this is creepy!")
 			state+=1
 		fire_reply()
 		render_messages()
