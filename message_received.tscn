@@ -23,7 +23,6 @@ offset_left = 11.0
 offset_top = 22.0
 offset_right = 387.0
 offset_bottom = 65.0
-theme_override_font_sizes/font_size = 26
 text = "TEST MESSAGE"
 vertical_alignment = 1
 
