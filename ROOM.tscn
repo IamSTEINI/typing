@@ -141,7 +141,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d13mt")
 surface_material_override/0 = SubResource("StandardMaterial3D_otwi6")
 
 [node name="Kapı-Cam-1" parent="Kapı" index="0"]
-transform = Transform3D(-0.82017833, 1.947073e-07, 6.77278e-07, -1.5969465e-07, -3.576281e-07, -3.4784443, -1.5969461e-07, -1.0000006, 1.243989e-06, 0.24978638, -7.601984, 0.955513)
+transform = Transform3D(-0.8201784, 1.9470731e-07, 6.772781e-07, -1.5969466e-07, -3.5762812e-07, -3.4784448, -1.5969462e-07, -1.0000007, 1.2439891e-06, 0.17940521, -7.60198, 0.92585754)
 material_override = SubResource("StandardMaterial3D_mxa6l")
 
 [node name="Box001" parent="Duvarlar" index="0"]

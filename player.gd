@@ -7,6 +7,8 @@ extends Camera3D
 @export var message_received: PackedScene
 @export var light: OmniLight3D
 @export var knock: AudioStreamPlayer3D
+@export var door_squeak: AudioStreamPlayer3D
+@export var shelf_door: Node3D
 
 @onready var notif_container := $UI/Notifications
 @onready var type_field := $UI/TypeWriter
@@ -17,7 +19,7 @@ var startrotation := Vector3.ZERO
 var nqueue: Array = []
 var notifications: Array = []
 var showing_notification := false
-var state = 0
+var state = 8
 var can_reply = true
 
 func fade_light(duration: float = 2.0, max_energy: float = 1.0) -> void:
@@ -92,10 +94,12 @@ func fire_reply():
 		await type_write("I had met many people that evening; it was Halloween.")
 		await type_write("Perhaps he was one of them. I replied [PRESS SPACE]")
 		state += 1
+		can_reply = true
 	elif state == 3:
 		add_notification("Mike", "Anyway... How are you?")
 		await type_write("We chatted a bit [PRESS SPACE]")
 		state += 1
+		can_reply = true
 	elif state == 5:
 		await get_tree().create_timer(1.35).timeout
 		add_notification("Mike", "Good to hear.")
@@ -105,22 +109,25 @@ func fire_reply():
 		add_notification("Mike", "Okay, just don't answer.")
 		await type_write("He seemed strange, but I was still too tired to respond. I told him that I want to sleep")
 		state += 1
+		can_reply = true
 	elif state == 7:
 		await get_tree().create_timer(1.35).timeout
 		add_notification("Mike", "What?")
 		state += 1
+		can_reply = true
 	elif state == 9:
 		await get_tree().create_timer(1.35).timeout
 		add_notification("Mike", "Your parents?")
 		state += 1
+		can_reply = true
 	elif state == 11:
 		await get_tree().create_timer(1.35).timeout
 		add_notification("Mike", "Propably it's just the wind...")
 		await type_write("Maybe it was really just the wind. At least, that's what I thought.")
 		await get_tree().create_timer(0.8).timeout
-		add_notification("Mike", "Calm down")
+		add_notification("Mike", "Or the guest you invited, who stayed. Watching.")
 		state += 1
-	can_reply = true
+		can_reply = true
 	
 func type_write(text: String) -> void:
 	$typewriter.play()
@@ -139,7 +146,7 @@ func _input(event: InputEvent) -> void:
 		$Phone.visible = !$Phone.visible
 		$UI/GridContainer/Send.visible = $Phone.visible
 		render_messages()
-	elif event is InputEventKey and event.pressed and event.keycode == KEY_SPACE && $Phone.visible == true and can_reply:
+	elif event is InputEventKey and event.pressed and event.keycode == KEY_SPACE && $Phone.visible == true and can_reply == true:
 		can_reply = false
 		if state == 0:
 			add_notification("You", "Who are you??")
@@ -159,6 +166,7 @@ func _input(event: InputEvent) -> void:
 			$Phone.visible = false
 			$UI/GridContainer/Send.visible = false
 			knock.play()
+			await type_write("There had been a knock at the door. I was scared")
 			await get_tree().create_timer(1).timeout
 			add_notification("You", "Someone just knocked...")
 			$Phone.visible = true
@@ -171,6 +179,21 @@ func _input(event: InputEvent) -> void:
 			add_notification("You", "Impossible, they're outside the city")
 			await get_tree().create_timer(1).timeout
 			add_notification("You", "God, this is creepy!")
+			state+=1
+		elif state == 12:
+			add_notification("You", "Mike, what do you mean?")
+			await type_write("I was frightened. I didn't know what was happening.")
+			await flicker(3, 0, 5)
+			light.light_energy = 0
+			$Phone.visible = false
+			$UI/GridContainer/Send.visible = false
+			await type_write("Suddenly, the lights turned off. Propably a power outage caused by the storms")
+			door_squeak.play()
+			type_write("I've heard some door squaking...")
+			await get_tree().create_timer(2.9).timeout
+			for i in range(80):
+				shelf_door.rotation_degrees += Vector3(0,1,0)
+				await get_tree().create_timer(0.02).timeout
 			state+=1
 		fire_reply()
 		render_messages()
